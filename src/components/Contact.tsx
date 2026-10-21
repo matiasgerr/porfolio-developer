@@ -10,17 +10,22 @@ const Contact = () => (
           <br />
           MOS.
         </h2>
-        <div className="flex gap-6 text-slate-500 font-mono text-sm">
-          {SOCIALS.map(({ label, href, icon: SocialIcon }) => (
-            <a
-              key={label}
-              href={href}
-              className="hover:text-blue-400 flex items-center gap-2 transition-colors"
-            >
-              <SocialIcon className="w-4 h-4" /> {label}
-            </a>
-          ))}
-        </div>
+        <ul className="flex flex-wrap gap-6 text-slate-400 font-mono text-sm">
+          {SOCIALS.map(({ label, href, icon: SocialIcon }) => {
+            const isExternal = href.startsWith('http');
+            return (
+              <li key={label}>
+                <a
+                  href={href}
+                  {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
+                  className="hover:text-blue-400 flex items-center gap-2 py-2 transition-colors"
+                >
+                  <SocialIcon className="w-4 h-4" aria-hidden="true" /> {label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
 
       <ContactForm />

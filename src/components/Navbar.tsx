@@ -1,15 +1,19 @@
 import { NAV_LINKS } from '../constants';
 
 const Navbar = () => (
-  <nav className="fixed top-6 right-6 md:top-10 md:right-10 z-50">
-    <div className="flex flex-col gap-4 font-mono text-xs tracking-widest uppercase text-slate-500">
+  <nav aria-label="Principal" className="fixed top-4 right-3 md:top-8 md:right-8 z-50">
+    <ul className="flex flex-col rounded-lg bg-slate-950/80 backdrop-blur-sm px-3 py-1 font-mono text-xs tracking-widest uppercase text-slate-400">
       {NAV_LINKS.map(({ href, label, hoverColor }) => (
-        <a key={href} href={href} className={`${hoverColor} transition-colors text-right group`}>
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity mr-2">-</span>
-          {label}
-        </a>
+        <li key={href}>
+          <a href={href} className={`${hoverColor} transition-colors text-right group block py-2`}>
+            <span aria-hidden="true" className="opacity-0 group-hover:opacity-100 transition-opacity mr-2">
+              -
+            </span>
+            {label}
+          </a>
+        </li>
       ))}
-    </div>
+    </ul>
   </nav>
 );
 

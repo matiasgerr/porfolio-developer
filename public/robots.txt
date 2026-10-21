@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matiasgerr-github-io.vercel.app/sitemap.xml
