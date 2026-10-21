@@ -9,9 +9,11 @@ const App = () => (
   <div className="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-teal-500/30 overflow-x-hidden">
     <Navbar />
     <Hero />
-    <About />
-    <Projects />
-    <Contact />
+    <main>
+      <About />
+      <Projects />
+      <Contact />
+    </main>
     <Footer />
   </div>
 );
