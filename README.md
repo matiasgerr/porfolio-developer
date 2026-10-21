@@ -28,6 +28,9 @@ pnpm preview   # sirve dist/ localmente
 | --------------- | ---------------------------------------- |
 | `VITE_FORM_URL` | Endpoint de Formspree del formulario     |
 
+- **Local:** copiar `.env.example` a `.env` y completar los valores. `.env` está en `.gitignore` y no se sube al repo.
+- **Vercel:** cargar las mismas variables en *Settings → Environment Variables* para Production y Preview.
+
 Las variables `VITE_*` quedan embebidas en el JavaScript público, así que nunca deben contener secretos.
 
 ## Flujo de ramas y despliegue
