@@ -11,6 +11,12 @@ export const CURRENT_YEAR = new Date().getFullYear();
 
 export const CONTACT_EMAIL = 'matiasdelgadodjr@gmail.com';
 
+// Replace public/cv/matias-delgado-cv.pdf to update the CV; the URL stays the same.
+export const CV = {
+  url: '/cv/matias-delgado-cv.pdf',
+  fileName: 'Matias-Delgado-CV.pdf',
+};
+
 export const PROJECT_TYPE_LABEL: Record<ProjectType, string> = {
   web: '/ Web App',
   mobile: '/ Mobile App',

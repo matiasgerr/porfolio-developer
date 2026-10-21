@@ -53,6 +53,7 @@ src/
   assets/       Capturas de proyectos (WebP)
   types/        Tipos compartidos
 public/         favicon, imagen Open Graph, robots.txt, sitemap.xml
+public/cv/      CV descargable (se reemplaza el PDF manteniendo el nombre)
 vercel.json     Headers de caché y seguridad
 ```
 
