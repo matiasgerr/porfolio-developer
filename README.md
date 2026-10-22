@@ -1,6 +1,6 @@
 # Portfolio · Matias Delgado
 
-Portfolio personal de Matias Delgado, Software Engineer (React, React Native, Node.js).
+Portfolio personal de Matias Delgado, Full Stack Developer (React, Next.js, TypeScript).
 
 **Producción:** https://porfolio-matias-dev-alpha.vercel.app
 

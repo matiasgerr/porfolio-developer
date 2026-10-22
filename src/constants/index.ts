@@ -1,5 +1,12 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
-import type { Project, ProjectType, Social, NavLink } from '../types';
+import type {
+  EducationItem,
+  ExperienceItem,
+  NavLink,
+  Project,
+  ProjectType,
+  Social,
+} from '../types';
 import landingSaasImg from '../assets/projects/landing-saas.webp';
 import yipiWebImg from '../assets/projects/yipi-web.webp';
 import ejeschoolImg from '../assets/projects/ejeschool.webp';
@@ -10,6 +17,69 @@ import planiaV2Img from '../assets/projects/plania-v2.webp';
 export const CURRENT_YEAR = new Date().getFullYear();
 
 export const CONTACT_EMAIL = 'matiasdelgadodjr@gmail.com';
+
+export const PROFILE = {
+  name: 'Matias Delgado',
+  role: 'Full Stack Developer',
+  location: 'Buenos Aires, Argentina · Remoto',
+};
+
+// Source: the CV in public/cv. Items without a period are missing dates in the CV.
+export const EXPERIENCE: ExperienceItem[] = [
+  {
+    role: 'Frontend Lead',
+    company: 'Ejesatelital',
+    project: 'YIPI · Plataforma logística y de rastreo',
+    period: 'Mar 2026 — Presente',
+    current: true,
+    highlights: [
+      'Desarrollo de una plataforma logística y de rastreo escalable con React y TypeScript.',
+      'Definición de la arquitectura del frontend bajo Clean Architecture e implementación de geolocalización avanzada con Google Maps API.',
+      'Paneles dinámicos adaptados a roles de usuario (negocio y cliente).',
+    ],
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'pnpm', 'Google Maps API'],
+  },
+  {
+    role: 'Full Stack Developer',
+    company: 'Ejesatelital',
+    project: 'Sistema de gestión para barberías',
+    period: 'Abr 2026 — Presente',
+    current: true,
+    highlights: [
+      'Diseño y ejecución integral de un sistema de gestión multisucursal.',
+      'Esquema relacional para personal e inventario, con middleware de autenticación segura y persistencia de sesiones.',
+      'Código modular para facilitar la escalabilidad del producto.',
+    ],
+    stack: ['React', 'TypeScript', 'Supabase', 'SQL'],
+  },
+  {
+    role: 'Software Developer',
+    company: 'Ejesatelital',
+    project: 'Plania y Ejeschool · Plataformas educativas y de planificación',
+    period: 'Ene 2026 — Mar 2026',
+    highlights: [
+      'Interfaces de alta fidelidad para plataformas educativas y de planificación.',
+      'Entornos virtuales macOS para automatizar builds de iOS (.ipa) en proyectos Flutter.',
+      'Refactorización de componentes legados para mejorar rendimiento y mantenibilidad.',
+    ],
+    stack: ['Flutter', 'React', 'macOS VM', 'Git Flow'],
+  },
+  {
+    role: 'Frontend Developer',
+    company: 'Gestión Globals Software',
+    project: 'Landing Page SaaS / Ecommerce',
+    highlights: [
+      'Landing page de ecommerce con diseño responsivo y catálogo de productos.',
+      'Flujo de compra integrado orientado a la conversión, con despliegue continuo en Vercel.',
+    ],
+    stack: ['Next.js', 'React', 'Tailwind CSS', 'MUI', 'Vercel'],
+  },
+];
+
+export const EDUCATION: EducationItem[] = [
+  { title: 'Ingeniería en Informática', institution: 'Universidad de Buenos Aires', period: '2026 — Actualidad' },
+  { title: 'Analista de Sistemas', institution: 'Institución de Técnica Superior' },
+];
 
 // Replace public/cv/matias-delgado-cv.pdf to update the CV; the URL stays the same.
 export const CV = {
@@ -133,12 +203,14 @@ export const SOCIALS: Social[] = [
 
 export const NAV_LINKS: NavLink[] = [
   { href: '#sobre-mi', label: 'Sobre mí', hoverColor: 'hover:text-blue-400' },
-  { href: '#proyectos', label: 'Proyectos', hoverColor: 'hover:text-teal-400' },
-  { href: '#contacto', label: 'Contacto', hoverColor: 'hover:text-blue-400' },
+  { href: '#experiencia', label: 'Experiencia', hoverColor: 'hover:text-teal-400' },
+  { href: '#proyectos', label: 'Proyectos', hoverColor: 'hover:text-blue-400' },
+  { href: '#contacto', label: 'Contacto', hoverColor: 'hover:text-teal-400' },
 ];
 
 export const SKILLS = [
-  { label: '/ WEB', items: ['React.js', 'Next.js', 'Tailwind CSS'] },
-  { label: '/ MOBILE', items: ['React Native', 'Tailwind CSS'] },
-  { label: '/ BACKEND', items: ['API REST', 'SQL Database', 'Node.js', 'PHP'] },
+  { label: '/ FRONTEND', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'MUI'] },
+  { label: '/ MOBILE', items: ['React Native', 'Flutter (Dart)'] },
+  { label: '/ BACKEND', items: ['Node.js', 'Supabase', 'SQL', 'APIs REST'] },
+  { label: '/ ARQUITECTURA', items: ['Clean Architecture', 'Git Flow', 'Vercel'] },
 ];

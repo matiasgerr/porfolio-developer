@@ -24,6 +24,22 @@ export interface Project {
   details?: ProjectDetails;
 }
 
+export interface ExperienceItem {
+  role: string;
+  company: string;
+  project: string;
+  period?: string;
+  current?: boolean;
+  highlights: string[];
+  stack: string[];
+}
+
+export interface EducationItem {
+  title: string;
+  institution: string;
+  period?: string;
+}
+
 export interface Social {
   label: string;
   href: string;

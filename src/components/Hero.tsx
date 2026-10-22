@@ -1,29 +1,59 @@
-import { Terminal } from 'lucide-react';
-import { CURRENT_YEAR } from '../constants';
+import { ArrowDown, MapPin } from 'lucide-react';
+import { CURRENT_YEAR, PROFILE } from '../constants';
 
 const Hero = () => (
-  <header className="min-h-screen flex flex-col justify-center px-4 md:px-12 relative pt-20">
-    <div className="absolute top-10 left-4 md:left-12 font-mono text-sm text-slate-400">
+  <header className="min-h-screen flex flex-col justify-center px-4 md:px-12 relative pt-24 pb-16">
+    <div className="hidden md:block absolute top-10 left-12 font-mono text-sm text-slate-400">
       Portfolio // {CURRENT_YEAR}
     </div>
 
     <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col gap-2">
-      <h1 className="flex flex-col gap-2">
-        <span className="sr-only">Matias Delgado, </span>
-        <span className="text-[15vw] md:text-[10vw] font-black leading-[0.85] tracking-tighter text-transparent [-webkit-text-stroke:1px_var(--color-slate-500)] hover:[-webkit-text-stroke:2px_var(--color-slate-400)] transition-all duration-500 cursor-default">
-          SOFTWARE
+      <p className="font-mono text-sm md:text-lg text-slate-400 mb-6">
+        <span aria-hidden="true" className="text-teal-400">
+          {'> '}
         </span>
-        <span className="text-[15vw] md:text-[10vw] font-black leading-[0.85] tracking-tighter bg-clip-text text-transparent bg-linear-to-r from-blue-500 via-teal-400 to-slate-200">
-          ENGINEER.
+        Hola, soy <span className="text-slate-100 font-semibold">{PROFILE.name}</span>
+      </p>
+
+      <h1 className="flex flex-col gap-2">
+        <span className="sr-only">{PROFILE.name}, </span>
+        <span className="text-[14vw] md:text-[10vw] font-black leading-[0.85] tracking-tighter text-transparent [-webkit-text-stroke:1px_var(--color-slate-500)] hover:[-webkit-text-stroke:2px_var(--color-slate-400)] transition-all duration-500 cursor-default">
+          FULL STACK
+        </span>
+        <span className="text-[14vw] md:text-[10vw] font-black leading-[0.85] tracking-tighter bg-clip-text text-transparent bg-linear-to-r from-blue-500 via-teal-400 to-slate-200">
+          DEVELOPER.
         </span>
       </h1>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mt-12 border-t border-slate-800 pt-8">
-        <p className="font-mono text-slate-400 max-w-md text-sm md:text-base mb-6 md:mb-0">
-          Especializado en arquitecturas escalables. Transformando lógicas complejas en interfaces
-          minimalistas.
-        </p>
-        <div className="flex gap-4" aria-hidden="true">
-          <Terminal className="w-8 h-8 text-slate-700" />
+
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mt-12 border-t border-slate-800 pt-8">
+        <div className="max-w-md space-y-4">
+          <p className="font-mono text-slate-400 text-sm md:text-base">
+            Dos años construyendo aplicaciones web y móviles escalables con React, Next.js y
+            TypeScript. Transformo lógicas complejas en interfaces minimalistas.
+          </p>
+          <p className="flex items-center gap-2 font-mono text-xs text-slate-400">
+            <MapPin aria-hidden="true" className="w-4 h-4 text-teal-400" />
+            {PROFILE.location}
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="#proyectos"
+            className="group inline-flex items-center gap-2 bg-teal-400 text-slate-950 font-bold px-6 py-3 rounded hover:bg-teal-300 transition-colors"
+          >
+            Ver proyectos
+            <ArrowDown
+              aria-hidden="true"
+              className="w-4 h-4 group-hover:translate-y-0.5 transition-transform"
+            />
+          </a>
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-2 border border-slate-700 text-slate-200 font-bold px-6 py-3 rounded hover:border-teal-400 hover:text-teal-400 transition-colors"
+          >
+            Contactar
+          </a>
         </div>
       </div>
     </div>

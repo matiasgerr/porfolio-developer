@@ -13,7 +13,7 @@ const Projects = () => {
     <section id="proyectos" className="py-32 border-t border-slate-800">
       <div className="px-4 md:px-12 mb-20 max-w-7xl mx-auto">
         <p className="text-sm font-mono tracking-widest text-teal-400 uppercase mb-4">
-          ( 02. Trabajo )
+          ( 03. Trabajo )
         </p>
         <h2 className="text-4xl md:text-6xl font-bold text-slate-100">
           Colección de Proyectos.

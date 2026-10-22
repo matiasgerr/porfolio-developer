@@ -11,7 +11,7 @@ const Resume = () => (
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-10">
       <div>
         <p className="text-sm font-mono tracking-widest text-teal-400 uppercase mb-4">
-          ( 03. Currículum )
+          ( 04. Currículum )
         </p>
         <h2 id="cv-title" className="text-4xl md:text-5xl font-bold text-slate-100 mb-4">
           ¿Te gustó lo que viste?

@@ -12,14 +12,19 @@ const About = () => (
 
       <div className="md:col-span-8 md:col-start-6 space-y-8 text-lg md:text-xl text-slate-400 font-light leading-relaxed">
         <p>
-          Me llamo <strong className="text-blue-400 uppercase">Matias Delgado</strong>. Busco brindar
-          soluciones a empresas, profesionales y emprendedores mediante la programación, con un
-          código escalable y funcional. En el <strong className="text-blue-400 font-normal">front</strong>{' '}
-          busco la fluidez de las interfaces modernas{' '}
-          <strong className="text-slate-200 font-normal">(React & React Native)</strong>.
+          Me llamo <strong className="text-blue-400 uppercase">Matias Delgado</strong>. Soy
+          desarrollador Full Stack con orientación{' '}
+          <strong className="text-blue-400 font-normal">front</strong> y dos años de experiencia
+          construyendo aplicaciones web escalables con{' '}
+          <strong className="text-slate-200 font-normal">React, Next.js y TypeScript</strong>.
+        </p>
+        <p>
+          Trabajo con Clean Architecture, integración de APIs, bases de datos relacionales y
+          desarrollo mobile. Busco brindar soluciones a empresas, profesionales y emprendedores con
+          código escalable y funcional. Estudio Ingeniería en Informática en la UBA.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-4 pt-12 border-t border-slate-800 font-mono text-sm">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 pt-12 border-t border-slate-800 font-mono text-sm">
           {SKILLS.map(({ label, items }) => (
             <div key={label}>
               <h3 className="block text-slate-400 mb-2">{label}</h3>
