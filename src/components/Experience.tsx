@@ -1,8 +1,9 @@
 import { EDUCATION, EXPERIENCE } from '../constants';
+import Reveal from './Reveal';
 
 const Experience = () => (
   <section id="experiencia" className="py-32 px-4 md:px-12 border-t border-slate-800">
-    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-4">
+    <Reveal className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-4">
       <div className="md:col-span-4">
         <p className="text-sm font-mono tracking-widest text-teal-400 uppercase mb-4">
           ( 02. Experiencia )
@@ -62,7 +63,7 @@ const Experience = () => (
           </ul>
         </div>
       </div>
-    </div>
+    </Reveal>
   </section>
 );
 

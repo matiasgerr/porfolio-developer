@@ -1,5 +1,6 @@
 import { Download } from 'lucide-react';
 import { CV } from '../constants';
+import Reveal from './Reveal';
 
 // Placed after the projects on purpose: visitors see the work first, then take the CV.
 const Resume = () => (
@@ -8,7 +9,7 @@ const Resume = () => (
     aria-labelledby="cv-title"
     className="py-24 md:py-32 px-4 md:px-12 border-t border-slate-800 bg-slate-900/20"
   >
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-10">
+    <Reveal className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-10">
       <div>
         <p className="text-sm font-mono tracking-widest text-teal-400 uppercase mb-4">
           ( 04. Currículum )
@@ -35,7 +36,7 @@ const Resume = () => (
           <span className="font-mono text-xs text-slate-400">PDF</span>
         </span>
       </a>
-    </div>
+    </Reveal>
   </section>
 );
 

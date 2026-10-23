@@ -1,17 +1,14 @@
-import { Globe, Smartphone, Server, ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { PROJECT_TYPE_ICON } from "../constants";
 import type { Project, ProjectType } from "../types";
 
 interface ProjectCardProps {
   project: Project;
+  /** Position shown on the left, e.g. "01". */
+  number: string;
   isOpen?: boolean;
   onSelect: (id: string) => void;
 }
-
-const TYPE_ICON: Record<ProjectType, typeof Globe> = {
-  web: Globe,
-  mobile: Smartphone,
-  backend: Server,
-};
 
 const TYPE_ICON_HOVER: Record<ProjectType, string> = {
   web: "group-hover:text-blue-400",
@@ -26,10 +23,11 @@ const STRETCHED_TARGET =
 
 const ProjectCard = ({
   project,
+  number,
   isOpen = false,
   onSelect,
 }: ProjectCardProps) => {
-  const Icon = TYPE_ICON[project.type];
+  const Icon = PROJECT_TYPE_ICON[project.type];
   const isExpandable = Boolean(project.details);
 
   let title = <>{project.title}</>;
@@ -68,12 +66,12 @@ const ProjectCard = ({
             aria-hidden="true"
             className="font-mono text-2xl md:text-4xl text-slate-700 group-hover:text-blue-500 transition-colors"
           >
-            {project.id}
+            {number}
           </span>
           <div>
-            <h3 className="text-2xl md:text-4xl font-bold text-slate-200 mb-2">
+            <h4 className="text-2xl md:text-4xl font-bold text-slate-200 mb-2">
               {title}
-            </h3>
+            </h4>
             <p className="text-slate-400 text-sm md:text-base max-w-md">
               {project.description}
             </p>

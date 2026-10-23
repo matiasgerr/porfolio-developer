@@ -27,9 +27,9 @@ const ProjectDetails = ({ project, open }: ProjectDetailsProps) => {
               <span className="font-mono text-xs tracking-widest text-teal-400 uppercase mb-4">
                 {PROJECT_TYPE_LABEL[project.type]}
               </span>
-              <h4 className="text-2xl md:text-3xl font-bold text-slate-100 mb-4">
+              <h5 className="text-2xl md:text-3xl font-bold text-slate-100 mb-4">
                 {project.title}
-              </h4>
+              </h5>
               <p
                 className={`text-slate-400 text-sm md:text-base leading-relaxed mb-6 ${image ? "" : "max-w-4xl"}`}
               >

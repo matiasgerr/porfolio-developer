@@ -1,6 +1,6 @@
 # Portfolio · Matias Delgado
 
-Portfolio personal de Matias Delgado, Full Stack Developer (React, Next.js, TypeScript).
+Portfolio personal de Matias Delgado, Frontend Developer (React, Next.js, TypeScript).
 
 **Producción:** https://porfolio-matias-dev-alpha.vercel.app
 
