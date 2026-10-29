@@ -50,13 +50,21 @@ const Experience = () => (
 
         <div className="mt-16 pt-12 border-t border-slate-800">
           <h3 className="font-mono text-sm text-slate-400 mb-6">/ FORMACIÓN</h3>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {EDUCATION.map((item) => (
               <li key={item.title}>
+                <span
+                  className={`inline-block mb-2 rounded-full px-2.5 py-0.5 font-mono text-xs ${
+                    item.status === 'En curso'
+                      ? 'bg-teal-400/10 text-teal-300 ring-1 ring-teal-400/30'
+                      : 'bg-slate-800 text-slate-300'
+                  }`}
+                >
+                  {item.status}
+                </span>
                 <p className="text-lg font-semibold text-slate-100">{item.title}</p>
                 <p className="text-sm text-slate-400">
-                  {item.institution}
-                  {item.period && ` · ${item.period}`}
+                  {[item.institution, item.period].filter(Boolean).join(' · ')}
                 </p>
               </li>
             ))}

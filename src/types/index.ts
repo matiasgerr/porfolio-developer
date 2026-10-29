@@ -39,8 +39,9 @@ export interface ExperienceItem {
 
 export interface EducationItem {
   title: string;
-  institution: string;
+  institution?: string;
   period?: string;
+  status: 'En curso' | 'Recibido';
 }
 
 export interface SkillItem {

@@ -105,8 +105,14 @@ export const EXPERIENCE: ExperienceItem[] = [
 ];
 
 export const EDUCATION: EducationItem[] = [
-  { title: 'Ingeniería en Informática', institution: 'Universidad de Buenos Aires', period: '2026 — Actualidad' },
-  { title: 'Analista de Sistemas', institution: 'Institución de Técnica Superior' },
+  {
+    title: 'Ingeniería en Informática',
+    institution: 'Universidad de Buenos Aires',
+    period: '2026 — Actualidad',
+    status: 'En curso',
+  },
+  { title: 'Analista de Sistemas', institution: 'Institución de Técnica Superior', period: '2026', status: 'Recibido' },
+  { title: 'Técnico en Informática', status: 'Recibido' },
 ];
 
 // Replace public/cv/matias-delgado-cv.pdf to update the CV; the URL stays the same.
