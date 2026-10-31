@@ -21,7 +21,7 @@ const About = () => (
           lidero el frontend de YIPI en Ejesatelital.
         </p>
         <p>
-          También trabajo del lado del servidor con Node.js, Supabase y SQL, aplico Clean
+          También trabajo del lado del servidor con Node.js, Java, Supabase y SQL, aplico Clean
           Architecture e integro APIs. Busco brindar soluciones a empresas, profesionales y
           emprendedores con código escalable y funcional. Soy Analista de Sistemas y Técnico en
           Informática, y estudio Ingeniería en Informática en la UBA.

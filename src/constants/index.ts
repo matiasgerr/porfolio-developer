@@ -12,13 +12,19 @@ import {
 } from 'lucide-react';
 import {
   siExpo,
+  siExpress,
   siFlutter,
   siGit,
   siGooglemaps,
+  siMercadopago,
   siMui,
   siNextdotjs,
   siNodedotjs,
+  siOpenjdk,
+  siPostgresql,
+  siPrisma,
   siReact,
+  siSpringboot,
   siSupabase,
   siTailwindcss,
   siTypescript,
@@ -40,6 +46,7 @@ import planiaImg from '../assets/projects/plania.webp';
 import yipiAppImg from '../assets/projects/yipi-app.webp';
 import planiaV2Img from '../assets/projects/plania-v2.webp';
 import miraImg from '../assets/projects/mira.webp';
+import bioClassImg from '../assets/projects/bio-class.webp';
 
 export const CURRENT_YEAR = new Date().getFullYear();
 
@@ -48,11 +55,11 @@ export const CONTACT_EMAIL = 'matiasdelgadodjr@gmail.com';
 export const PROFILE = {
   name: 'Matias Delgado',
   role: 'Frontend Developer',
-  tagline: 'React, Next.js y TypeScript, con base en backend: Node.js, Supabase y SQL.',
+  tagline: 'React, Next.js y TypeScript, con base en backend: Node.js, Java y SQL.',
   location: 'Buenos Aires, Argentina · Remoto',
 };
 
-// Source: the CV in public/cv. Items without a period are missing dates in the CV.
+// Source: the CV in public/cv and the project repos. Items without a period are missing dates.
 export const EXPERIENCE: ExperienceItem[] = [
   {
     role: 'Frontend Lead',
@@ -81,6 +88,19 @@ export const EXPERIENCE: ExperienceItem[] = [
     stack: ['React', 'TypeScript', 'Supabase', 'SQL'],
   },
   {
+    role: 'Full Stack Developer',
+    company: 'Bio Class',
+    project: 'Plataforma de gestión de cursos, mentorías y clases en vivo',
+    period: 'Oct 2026',
+    highlights: [
+      'Sistema que resuelve la gestión, el acceso y los datos de los cursos para docentes que buscan una web propia para dar mentorías, cursos o clases en vivo.',
+      'Autenticación con JWT y verificación por código OTP: registro y validación de docentes, registro e inicio de sesión de estudiantes y permisos por rol.',
+      'Catálogo de cursos por materia o especialización y calendario con los horarios de cursada.',
+      'Cobros con la API de Mercado Pago (checkout y webhooks) y panel de administración con métricas, usuarios, cursos y órdenes.',
+    ],
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Mercado Pago API'],
+  },
+  {
     role: 'Software Developer',
     company: 'Ejesatelital',
     project: 'Plania y Ejeschool · Plataformas educativas y de planificación',
@@ -91,6 +111,17 @@ export const EXPERIENCE: ExperienceItem[] = [
       'Refactorización de componentes legados para mejorar rendimiento y mantenibilidad.',
     ],
     stack: ['Flutter', 'React', 'macOS VM', 'Git Flow'],
+  },
+  {
+    role: 'Software Developer',
+    company: 'Hospital Privado',
+    project: 'Sistema de gestión de turnos y datos clínicos',
+    highlights: [
+      'Sistema de turnos para organizar y resolver la agenda de atención del hospital.',
+      'Base de datos dedicada a información crucial: registros de salud, recibos y otros datos de los pacientes.',
+      'Backend en Java con APIs REST y validación de datos para mantener la información consistente y trazable.',
+    ],
+    stack: ['Java', 'Spring Boot', 'SQL', 'APIs REST'],
   },
   {
     role: 'Frontend Developer',
@@ -164,6 +195,20 @@ export const PROJECTS: Project[] = [
     },
   },
   {
+    id: 'bio-class',
+    title: 'Bio Class',
+    type: 'web',
+    featured: true,
+    description:
+      'Sistema que resuelve la gestión, el acceso y los datos de cursos para docentes que dan mentorías, cursos o clases en vivo: autenticación con registro y validación de docentes, ingreso de estudiantes, catálogo por materia o especialización, calendario de cursada y pagos con la API de Mercado Pago.',
+    stack: ['React', 'TypeScript', 'Tailwind', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Mercado Pago API'],
+    details: {
+      summary:
+        'Plataforma de cursos con autenticación por roles, catálogo, calendario de horarios, pagos con Mercado Pago y panel de administración.',
+      image: { src: bioClassImg, alt: 'Portada de la plataforma de cursos Bio Class', width: 1400, height: 600 },
+    },
+  },
+  {
     id: 'yipi-web',
     title: 'YIPI Web',
     type: 'web',
@@ -196,6 +241,7 @@ export const PROJECTS: Project[] = [
     id: 'ejeschool',
     title: 'Ejeschool Application',
     type: 'mobile',
+    featured: true,
     description:
       'Aplicación Family View para gestionar, hacer tracking y consultar el historial de viajes realizados o en vivo mediante suscripciones.',
     stack: ['React Native', 'Expo', 'Tailwind', 'REST', 'Traccar', 'Push Notifications'],
@@ -297,6 +343,11 @@ export const SKILLS: SkillGroup[] = [
     label: '/ BACKEND',
     items: [
       { name: 'Node.js', icon: siNodedotjs },
+      { name: 'Express', icon: siExpress },
+      { name: 'Java', icon: siOpenjdk },
+      { name: 'Spring Boot', icon: siSpringboot },
+      { name: 'PostgreSQL', icon: siPostgresql },
+      { name: 'Prisma', icon: siPrisma },
       { name: 'Supabase', icon: siSupabase },
       { name: 'SQL', fallbackIcon: Database },
       { name: 'APIs REST', fallbackIcon: Network },
@@ -308,6 +359,7 @@ export const SKILLS: SkillGroup[] = [
       { name: 'Git Flow', icon: siGit },
       { name: 'Vercel', icon: siVercel },
       { name: 'Google Maps API', icon: siGooglemaps },
+      { name: 'Mercado Pago API', icon: siMercadopago },
       { name: 'Clean Architecture', fallbackIcon: Layers },
     ],
   },

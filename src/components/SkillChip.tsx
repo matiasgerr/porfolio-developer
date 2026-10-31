@@ -1,12 +1,12 @@
 import type { CSSProperties } from 'react';
 import type { SkillItem } from '../types';
 
-// Brands with very dark logos (Next.js, Vercel, Expo) would vanish on the dark
+// Brands with very dark logos (Next.js, Vercel, Java) would vanish on the dark
 // background, so their hover colour falls back to a light tone.
 const hoverColor = (hex: string) => {
   const [r, g, b] = [0, 2, 4].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
   const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  return luminance < 0.2 ? '#e2e8f0' : `#${hex}`;
+  return luminance < 0.3 ? '#e2e8f0' : `#${hex}`;
 };
 
 const SkillChip = ({ item }: { item: SkillItem }) => {
