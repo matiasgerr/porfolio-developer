@@ -1,8 +1,8 @@
 # Portfolio · Matias Delgado
 
-Portfolio personal de Matias Delgado, Software Engineer (React, React Native, Node.js).
+Portfolio personal de Matias Delgado, Frontend Developer (React, Next.js, TypeScript).
 
-**Producción:** https://matiasgerr-github-io.vercel.app
+**Producción:** https://porfolio-matias-dev-alpha.vercel.app
 
 ## Stack
 
@@ -27,6 +27,9 @@ pnpm preview   # sirve dist/ localmente
 | Variable        | Uso                                      |
 | --------------- | ---------------------------------------- |
 | `VITE_FORM_URL` | Endpoint de Formspree del formulario     |
+
+- **Local:** copiar `.env.example` a `.env` y completar los valores. `.env` está en `.gitignore` y no se sube al repo.
+- **Vercel:** cargar las mismas variables en *Settings → Environment Variables* para Production y Preview.
 
 Las variables `VITE_*` quedan embebidas en el JavaScript público, así que nunca deben contener secretos.
 

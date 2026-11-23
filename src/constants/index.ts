@@ -1,20 +1,161 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
-import type { Project, ProjectType, Social, NavLink } from '../types';
+import {
+  Database,
+  Github,
+  Globe,
+  Layers,
+  Linkedin,
+  Mail,
+  Network,
+  Server,
+  Smartphone,
+  type LucideIcon,
+} from 'lucide-react';
+import {
+  siExpo,
+  siExpress,
+  siFlutter,
+  siGit,
+  siGooglemaps,
+  siMercadopago,
+  siMui,
+  siNextdotjs,
+  siNodedotjs,
+  siOpenjdk,
+  siPostgresql,
+  siPrisma,
+  siReact,
+  siSpringboot,
+  siSupabase,
+  siTailwindcss,
+  siTypescript,
+  siVercel,
+} from 'simple-icons';
+import type {
+  EducationItem,
+  ExperienceItem,
+  NavLink,
+  Project,
+  ProjectType,
+  SkillGroup,
+  Social,
+} from '../types';
 import landingSaasImg from '../assets/projects/landing-saas.webp';
 import yipiWebImg from '../assets/projects/yipi-web.webp';
 import ejeschoolImg from '../assets/projects/ejeschool.webp';
 import planiaImg from '../assets/projects/plania.webp';
 import yipiAppImg from '../assets/projects/yipi-app.webp';
 import planiaV2Img from '../assets/projects/plania-v2.webp';
+import miraImg from '../assets/projects/mira.webp';
+import bioClassImg from '../assets/projects/bio-class.webp';
 
 export const CURRENT_YEAR = new Date().getFullYear();
 
 export const CONTACT_EMAIL = 'matiasdelgadodjr@gmail.com';
 
+export const PROFILE = {
+  name: 'Matias Delgado',
+  role: 'Desarrollador de Software',
+  tagline: 'React, Next.js y TypeScript, más Node.js, Java y SQL.',
+  location: 'Buenos Aires, Argentina · Remoto',
+};
+
+// Source: the CV in public/cv and the project repos. Items without a period are missing dates.
+export const EXPERIENCE: ExperienceItem[] = [
+  {
+    role: 'Líder Frontend',
+    company: 'Ejesatelital',
+    project: 'YIPI · Plataforma logística y de rastreo',
+    period: 'Mar 2026 — Presente',
+    current: true,
+    highlights: [
+      'Desarrollo de una plataforma logística y de rastreo escalable con React y TypeScript.',
+      'Definición de la arquitectura del frontend bajo Clean Architecture e implementación de geolocalización avanzada con Google Maps API.',
+      'Paneles dinámicos adaptados a roles de usuario (negocio y cliente).',
+    ],
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'pnpm', 'Google Maps API'],
+  },
+  {
+    role: 'Desarrollador Full Stack',
+    company: 'Ejesatelital',
+    project: 'Sistema de gestión para barberías',
+    period: 'Abr 2026 — Presente',
+    current: true,
+    highlights: [
+      'Diseño y ejecución integral de un sistema de gestión multisucursal.',
+      'Esquema relacional para personal e inventario, con middleware de autenticación segura y persistencia de sesiones.',
+      'Código modular para facilitar la escalabilidad del producto.',
+    ],
+    stack: ['React', 'TypeScript', 'Supabase', 'SQL'],
+  },
+  {
+    role: 'Desarrollador Full Stack',
+    company: 'Bio Class',
+    project: 'Plataforma de gestión de cursos, mentorías y clases en vivo',
+    period: 'Oct 2026',
+    highlights: [
+      'Sistema que resuelve la gestión, el acceso y los datos de los cursos para docentes que buscan una web propia para dar mentorías, cursos o clases en vivo.',
+      'Autenticación con JWT y verificación por código OTP: registro y validación de docentes, registro e inicio de sesión de estudiantes y permisos por rol.',
+      'Catálogo de cursos por materia o especialización y calendario con los horarios de cursada.',
+      'Cobros con la API de Mercado Pago (checkout y webhooks) y panel de administración con métricas, usuarios, cursos y órdenes.',
+    ],
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Mercado Pago API'],
+  },
+  {
+    role: 'Desarrollador de Software',
+    company: 'Ejesatelital',
+    project: 'Plania y Ejeschool · Plataformas educativas y de planificación',
+    period: 'Ene 2026 — Mar 2026',
+    highlights: [
+      'Interfaces de alta fidelidad para plataformas educativas y de planificación.',
+      'Entornos virtuales macOS para automatizar builds de iOS (.ipa) en proyectos Flutter.',
+      'Refactorización de componentes legados para mejorar rendimiento y mantenibilidad.',
+    ],
+    stack: ['Flutter', 'React', 'macOS VM', 'Git Flow'],
+  },
+  {
+    role: 'Desarrollador de Software',
+    company: 'Hospital Privado',
+    project: 'Sistema de gestión de turnos y datos clínicos',
+    highlights: [
+      'Sistema de turnos para organizar y resolver la agenda de atención del hospital.',
+      'Base de datos dedicada a información crucial: registros de salud, recibos y otros datos de los pacientes.',
+      'Backend en Java con APIs REST y validación de datos para mantener la información consistente y trazable.',
+    ],
+    stack: ['Java', 'Spring Boot', 'SQL', 'APIs REST'],
+  },
+  {
+    role: 'Desarrollador Frontend',
+    company: 'Gestión Globals Software',
+    project: 'Página de presentación SaaS / Ecommerce',
+    highlights: [
+      'Landing page de ecommerce con diseño responsivo y catálogo de productos.',
+      'Flujo de compra integrado orientado a la conversión, con despliegue continuo en Vercel.',
+    ],
+    stack: ['Next.js', 'React', 'Tailwind CSS', 'MUI', 'Vercel'],
+  },
+];
+
+export const EDUCATION: EducationItem[] = [
+  {
+    title: 'Ingeniería en Informática',
+    institution: 'Universidad de Buenos Aires',
+    period: '2026 — Actualidad',
+    status: 'En curso',
+  },
+  { title: 'Analista de Sistemas', institution: 'Institución de Técnica Superior', period: '2026', status: 'Recibido' },
+  { title: 'Técnico en Informática', status: 'Recibido' },
+];
+
 // Replace public/cv/matias-delgado-cv.pdf to update the CV; the URL stays the same.
 export const CV = {
   url: '/cv/matias-delgado-cv.pdf',
   fileName: 'Matias-Delgado-CV.pdf',
+};
+
+export const PROJECT_TYPE_ICON: Record<ProjectType, LucideIcon> = {
+  web: Globe,
+  mobile: Smartphone,
+  backend: Server,
 };
 
 export const PROJECT_TYPE_LABEL: Record<ProjectType, string> = {
@@ -25,9 +166,67 @@ export const PROJECT_TYPE_LABEL: Record<ProjectType, string> = {
 
 export const PROJECTS: Project[] = [
   {
-    id: '01',
-    title: 'Landing Page SAAS',
+    id: 'mira',
+    title: 'MIRA',
+    type: 'mobile',
+    featured: true,
+    description:
+      'Servicio nacido de la necesidad de supervisar a personas de tercera edad, adaptado al seguimiento de salud. El reloj detecta caídas y extravíos gracias a su firmware y, desde la app, el grupo de cuidado puede llamar al reloj, pedir su ubicación, cargar medicamentos y ver ritmo cardíaco, presión, temperatura y oxígeno en sangre.',
+    // TODO: replace with the real tech stack once confirmed
+    stack: ['App móvil', 'GPS en tiempo real', 'Wearables', 'Alertas de salud'],
+    details: {
+      summary:
+        'Servicio nacido de la necesidad de supervisar a personas de tercera edad, adaptado al seguimiento de salud.',
+      image: { src: miraImg, alt: 'App MIRA: alertas de salud, centro de ayuda y seguimiento GPS', width: 1400, height: 600 },
+    },
+  },
+  {
+    id: 'plania-v2',
+    title: 'Plania V2',
+    type: 'mobile',
+    featured: true,
+    description:
+      'Gestión integral para barberías: agenda del día, link público de reservas, estadísticas del negocio, rendimiento del equipo y servicios más pedidos, con WhatsApp automatizado, notificaciones push y pagos con Wompi.',
+    stack: ['React Native', 'Tailwind', 'REST', 'Meta', 'Wompi', 'Push Notifications'],
+    details: {
+      summary:
+        'Segunda versión de Plania: gestión de locales, clientes y servicios con mensajes de WhatsApp automatizados vía Meta, notificaciones push y pagos integrados con Wompi.',
+      image: { src: planiaV2Img, alt: 'App Plania V2: resumen, agenda y estadísticas de la barbería', width: 1400, height: 600 },
+    },
+  },
+  {
+    id: 'bio-class',
+    title: 'Bio Class',
     type: 'web',
+    featured: true,
+    description:
+      'Sistema que resuelve la gestión, el acceso y los datos de cursos para docentes que dan mentorías, cursos o clases en vivo: autenticación con registro y validación de docentes, ingreso de estudiantes, catálogo por materia o especialización, calendario de cursada y pagos con la API de Mercado Pago.',
+    stack: ['React', 'TypeScript', 'Tailwind', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Mercado Pago API'],
+    details: {
+      summary:
+        'Plataforma de cursos con autenticación por roles, catálogo, calendario de horarios, pagos con Mercado Pago y panel de administración.',
+      image: { src: bioClassImg, alt: 'Portada de la plataforma de cursos Bio Class', width: 1400, height: 600 },
+    },
+  },
+  {
+    id: 'yipi-web',
+    title: 'YIPI Web',
+    type: 'web',
+    featured: true,
+    description:
+      'Plataforma de rastreo vehicular: geocercas, historial, planes y gestión de vehículos y servicios, con tracking en vivo ante actividad sospechosa.',
+    stack: ['React', 'Traccar', 'Tailwind', 'REST'],
+    details: {
+      summary:
+        'Versión web de YIPI con las mismas funcionalidades de gestión de locales, consumo, costos y productos, sumando capacidades adicionales propias de la plataforma web.',
+      image: { src: yipiWebImg, alt: 'Panel web de YIPI con mapa de geocercas', width: 1400, height: 788 },
+    },
+  },
+  {
+    id: 'landing-saas',
+    title: 'Landing Page SaaS',
+    type: 'web',
+    featured: true,
     description:
       'Landing page de ecommerce moderna con diseño responsivo, catálogo de productos y flujo de compra integrado.',
     stack: ['NextJS', 'Tailwind', 'Vercel', 'MUI'],
@@ -39,22 +238,10 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: '02',
-    title: 'YIPI WEB',
-    type: 'web',
-    description:
-      'Visualización de geocercas, historial, planes, gestión de vehículos y de servicios realizados o pendientes para mantener y regularizar pagos del vehículo, además de tracking en vivo ante actividad sospechosa.',
-    stack: ['React', 'Traccar', 'Tailwind', 'REST'],
-    details: {
-      summary:
-        'Versión web de YIPI con las mismas funcionalidades de gestión de locales, consumo, costos y productos, sumando capacidades adicionales propias de la plataforma web.',
-      image: { src: yipiWebImg, alt: 'Panel web de YIPI con mapa de geocercas', width: 1400, height: 788 },
-    },
-  },
-  {
-    id: '03',
+    id: 'ejeschool',
     title: 'Ejeschool Application',
     type: 'mobile',
+    featured: true,
     description:
       'Aplicación Family View para gestionar, hacer tracking y consultar el historial de viajes realizados o en vivo mediante suscripciones.',
     stack: ['React Native', 'Expo', 'Tailwind', 'REST', 'Traccar', 'Push Notifications'],
@@ -65,7 +252,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: '04',
+    id: 'plania',
     title: 'Plania Application',
     type: 'mobile',
     description:
@@ -78,7 +265,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: '05',
+    id: 'yipi-app',
     title: 'YIPI Application',
     type: 'mobile',
     description:
@@ -91,7 +278,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: '06',
+    id: 'eje-satelital',
     title: 'Eje Satelital',
     type: 'backend',
     description:
@@ -103,26 +290,21 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: '07',
-    title: 'Plania V.2',
-    type: 'mobile',
-    description:
-      'Aplicación basada en React Native para la gestión total de los locales a tu cargo, clientes y servicios, con integración de WhatsApp automatizado, notificaciones push y pagos con Wompi.',
-    stack: ['React Native', 'Tailwind', 'REST', 'Meta', 'Wompi', 'Push Notifications'],
-    details: {
-      summary:
-        'Segunda versión de Plania: gestión de locales, clientes y servicios con mensajes de WhatsApp automatizados vía Meta, notificaciones push y pagos integrados con Wompi.',
-      image: { src: planiaV2Img, alt: 'App móvil Plania V2', width: 1400, height: 586 },
-    },
-  },
-  {
-    id: '08',
+    id: 'plania-backend',
     title: 'Plania Backend',
     type: 'backend',
     description:
       'Proyecto backend en Node.js orientado a la gestión de datos críticos en base de datos, con APIs REST y foco en trazabilidad operativa.',
     stack: ['Node.js', 'Express', 'SQL', 'REST'],
   },
+];
+
+// Metrics shown under the hero; keep them verifiable (sourced from the CV and PROJECTS).
+export const METRICS = [
+  { value: '2+', label: 'años de experiencia' },
+  { value: String(PROJECTS.length), label: 'proyectos' },
+  { value: 'Líder', label: 'frontend en Ejesatelital' },
+  { value: 'Web + Móvil', label: 'plataformas' },
 ];
 
 export const SOCIALS: Social[] = [
@@ -132,13 +314,53 @@ export const SOCIALS: Social[] = [
 ];
 
 export const NAV_LINKS: NavLink[] = [
-  { href: '#sobre-mi', label: 'Sobre mí', hoverColor: 'hover:text-blue-400' },
-  { href: '#proyectos', label: 'Proyectos', hoverColor: 'hover:text-teal-400' },
-  { href: '#contacto', label: 'Contacto', hoverColor: 'hover:text-blue-400' },
+  { href: '#sobre-mi', label: 'Sobre mí', hoverColor: 'hover:text-ink' },
+  { href: '#proyectos', label: 'Proyectos', hoverColor: 'hover:text-ink' },
+  { href: '#experiencia', label: 'Experiencia', hoverColor: 'hover:text-ink' },
+  { href: '#contacto', label: 'Contacto', hoverColor: 'hover:text-ink' },
 ];
 
-export const SKILLS = [
-  { label: '/ WEB', items: ['React.js', 'Next.js', 'Tailwind CSS'] },
-  { label: '/ MOBILE', items: ['React Native', 'Tailwind CSS'] },
-  { label: '/ BACKEND', items: ['API REST', 'SQL Database', 'Node.js', 'PHP'] },
+export const SKILLS: SkillGroup[] = [
+  {
+    label: '/ FRONTEND',
+    items: [
+      { name: 'React', icon: siReact },
+      { name: 'Next.js', icon: siNextdotjs },
+      { name: 'TypeScript', icon: siTypescript },
+      { name: 'Tailwind CSS', icon: siTailwindcss },
+      { name: 'MUI', icon: siMui },
+    ],
+  },
+  {
+    label: '/ MÓVIL',
+    items: [
+      { name: 'React Native', icon: siReact },
+      { name: 'Flutter', icon: siFlutter },
+      { name: 'Expo', icon: siExpo },
+    ],
+  },
+  {
+    label: '/ BACKEND',
+    items: [
+      { name: 'Node.js', icon: siNodedotjs },
+      { name: 'Express', icon: siExpress },
+      { name: 'Java', icon: siOpenjdk },
+      { name: 'Spring Boot', icon: siSpringboot },
+      { name: 'PostgreSQL', icon: siPostgresql },
+      { name: 'Prisma', icon: siPrisma },
+      { name: 'Supabase', icon: siSupabase },
+      { name: 'SQL', fallbackIcon: Database },
+      { name: 'APIs REST', fallbackIcon: Network },
+    ],
+  },
+  {
+    label: '/ HERRAMIENTAS',
+    items: [
+      { name: 'Git Flow', icon: siGit },
+      { name: 'Vercel', icon: siVercel },
+      { name: 'Google Maps API', icon: siGooglemaps },
+      { name: 'Mercado Pago API', icon: siMercadopago },
+      { name: 'Clean Architecture', fallbackIcon: Layers },
+    ],
+  },
 ];
