@@ -6,7 +6,7 @@ import type { SkillItem } from '../types';
 const hoverColor = (hex: string) => {
   const [r, g, b] = [0, 2, 4].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
   const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  return luminance < 0.3 ? '#e2e8f0' : `#${hex}`;
+  return luminance < 0.3 ? '#3a3a3c' : `#${hex}`;
 };
 
 const SkillChip = ({ item }: { item: SkillItem }) => {
@@ -16,18 +16,18 @@ const SkillChip = ({ item }: { item: SkillItem }) => {
   return (
     <span
       style={style}
-      className="group/chip inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1.5 font-mono text-sm text-slate-200 transition-colors hover:border-slate-600"
+      className="group/chip inline-flex items-center gap-2 bubble rounded-full px-4 py-2 font-mono text-sm text-ink"
     >
       {icon ? (
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
-          className="w-4 h-4 fill-current text-slate-400 transition-colors group-hover/chip:text-(--brand)"
+          className="w-4 h-4 fill-current text-muted transition-colors group-hover/chip:text-(--brand)"
         >
           <path d={icon.path} />
         </svg>
       ) : (
-        FallbackIcon && <FallbackIcon aria-hidden="true" className="w-4 h-4 text-slate-400" />
+        FallbackIcon && <FallbackIcon aria-hidden="true" className="w-4 h-4 text-muted" />
       )}
       {item.name}
     </span>

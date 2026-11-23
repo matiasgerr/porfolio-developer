@@ -4,9 +4,27 @@ import FeaturedProjectCard from "./FeaturedProjectCard";
 import ProjectCard from "./ProjectCard";
 import ProjectDetails from "./ProjectDetails";
 import Reveal from "./Reveal";
+import { useLang } from '../i18n/context';
+import { PROJECTS_EN } from '../constants/en';
+import type { Project } from '../types';
 
-const FEATURED = PROJECTS.filter((project) => project.featured);
-const OTHERS = PROJECTS.filter((project) => !project.featured);
+// Overlays the English copy (keyed by id) on top of the Spanish project.
+const toEnglish = (project: Project): Project => {
+  const en = PROJECTS_EN[project.id];
+  if (!en) return project;
+  const { details } = project;
+  return {
+    ...project,
+    title: en.title ?? project.title,
+    description: en.description,
+    stack: en.stack ?? project.stack,
+    details: details && {
+      ...details,
+      summary: en.summary ?? details.summary,
+      image: details.image && { ...details.image, alt: en.alt ?? details.image.alt },
+    },
+  };
+};
 
 const Projects = () => {
   const [openProjectId, setOpenProjectId] = useState<string | null>(null);
@@ -14,14 +32,18 @@ const Projects = () => {
   const handleSelect = (id: string) =>
     setOpenProjectId((prev) => (prev === id ? null : id));
 
+  const { t, lang } = useLang();
+  const projects = lang === 'en' ? PROJECTS.map(toEnglish) : PROJECTS;
+  const FEATURED = projects.filter((project) => project.featured);
+  const OTHERS = projects.filter((project) => !project.featured);
   return (
-    <section id="proyectos" className="py-32 border-t border-slate-800">
+    <section id="proyectos" className="py-32 border-t border-line">
       <Reveal className="px-4 md:px-12 mb-16 max-w-7xl mx-auto">
-        <p className="text-sm font-mono tracking-widest text-teal-400 uppercase mb-4">
-          ( 03. Trabajo )
+        <p className="text-sm font-mono tracking-widest text-ink uppercase mb-4">
+          {t('( 02. Trabajo )', '( 02. Work )')}
         </p>
-        <h2 className="text-4xl md:text-6xl font-bold text-slate-100">
-          Proyectos destacados.
+        <h2 className="text-4xl md:text-6xl font-bold text-ink">
+          {t('Proyectos destacados.', 'Featured projects.')}
         </h2>
       </Reveal>
 
@@ -34,12 +56,12 @@ const Projects = () => {
       </div>
 
       <Reveal className="px-4 md:px-12 max-w-7xl mx-auto mt-24 mb-8">
-        <h3 className="font-mono text-sm tracking-widest text-slate-400 uppercase">
-          / Otros proyectos
+        <h3 className="font-mono text-sm tracking-widest text-muted uppercase">
+          {t('/ Otros proyectos', '/ Other projects')}
         </h3>
       </Reveal>
 
-      <div className="border-t border-slate-800">
+      <div className="space-y-4">
         {OTHERS.map((project, index) => (
           <article key={project.id}>
             <ProjectCard

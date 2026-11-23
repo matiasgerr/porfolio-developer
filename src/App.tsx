@@ -6,19 +6,21 @@ import Projects from './components/Projects';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => (
-  <div className="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-teal-500/30 overflow-x-hidden">
+  <div className="min-h-screen text-muted font-sans selection:bg-black/15 overflow-x-hidden">
     <Navbar />
     <Hero />
     <main>
       <About />
-      <Experience />
       <Projects />
+      <Experience />
       <Resume />
       <Contact />
     </main>
     <Footer />
+    <ScrollToTop />
   </div>
 );
 

@@ -54,15 +54,15 @@ export const CONTACT_EMAIL = 'matiasdelgadodjr@gmail.com';
 
 export const PROFILE = {
   name: 'Matias Delgado',
-  role: 'Frontend Developer',
-  tagline: 'React, Next.js y TypeScript, con base en backend: Node.js, Java y SQL.',
+  role: 'Desarrollador de Software',
+  tagline: 'React, Next.js y TypeScript, más Node.js, Java y SQL.',
   location: 'Buenos Aires, Argentina · Remoto',
 };
 
 // Source: the CV in public/cv and the project repos. Items without a period are missing dates.
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    role: 'Frontend Lead',
+    role: 'Líder Frontend',
     company: 'Ejesatelital',
     project: 'YIPI · Plataforma logística y de rastreo',
     period: 'Mar 2026 — Presente',
@@ -75,7 +75,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'pnpm', 'Google Maps API'],
   },
   {
-    role: 'Full Stack Developer',
+    role: 'Desarrollador Full Stack',
     company: 'Ejesatelital',
     project: 'Sistema de gestión para barberías',
     period: 'Abr 2026 — Presente',
@@ -88,7 +88,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     stack: ['React', 'TypeScript', 'Supabase', 'SQL'],
   },
   {
-    role: 'Full Stack Developer',
+    role: 'Desarrollador Full Stack',
     company: 'Bio Class',
     project: 'Plataforma de gestión de cursos, mentorías y clases en vivo',
     period: 'Oct 2026',
@@ -101,7 +101,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Mercado Pago API'],
   },
   {
-    role: 'Software Developer',
+    role: 'Desarrollador de Software',
     company: 'Ejesatelital',
     project: 'Plania y Ejeschool · Plataformas educativas y de planificación',
     period: 'Ene 2026 — Mar 2026',
@@ -113,7 +113,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     stack: ['Flutter', 'React', 'macOS VM', 'Git Flow'],
   },
   {
-    role: 'Software Developer',
+    role: 'Desarrollador de Software',
     company: 'Hospital Privado',
     project: 'Sistema de gestión de turnos y datos clínicos',
     highlights: [
@@ -124,9 +124,9 @@ export const EXPERIENCE: ExperienceItem[] = [
     stack: ['Java', 'Spring Boot', 'SQL', 'APIs REST'],
   },
   {
-    role: 'Frontend Developer',
+    role: 'Desarrollador Frontend',
     company: 'Gestión Globals Software',
-    project: 'Landing Page SaaS / Ecommerce',
+    project: 'Página de presentación SaaS / Ecommerce',
     highlights: [
       'Landing page de ecommerce con diseño responsivo y catálogo de productos.',
       'Flujo de compra integrado orientado a la conversión, con despliegue continuo en Vercel.',
@@ -303,8 +303,8 @@ export const PROJECTS: Project[] = [
 export const METRICS = [
   { value: '2+', label: 'años de experiencia' },
   { value: String(PROJECTS.length), label: 'proyectos' },
-  { value: 'Lead', label: 'frontend en Ejesatelital' },
-  { value: 'Web + Mobile', label: 'plataformas' },
+  { value: 'Líder', label: 'frontend en Ejesatelital' },
+  { value: 'Web + Móvil', label: 'plataformas' },
 ];
 
 export const SOCIALS: Social[] = [
@@ -314,10 +314,10 @@ export const SOCIALS: Social[] = [
 ];
 
 export const NAV_LINKS: NavLink[] = [
-  { href: '#sobre-mi', label: 'Sobre mí', hoverColor: 'hover:text-blue-400' },
-  { href: '#experiencia', label: 'Experiencia', hoverColor: 'hover:text-teal-400' },
-  { href: '#proyectos', label: 'Proyectos', hoverColor: 'hover:text-blue-400' },
-  { href: '#contacto', label: 'Contacto', hoverColor: 'hover:text-teal-400' },
+  { href: '#sobre-mi', label: 'Sobre mí', hoverColor: 'hover:text-ink' },
+  { href: '#proyectos', label: 'Proyectos', hoverColor: 'hover:text-ink' },
+  { href: '#experiencia', label: 'Experiencia', hoverColor: 'hover:text-ink' },
+  { href: '#contacto', label: 'Contacto', hoverColor: 'hover:text-ink' },
 ];
 
 export const SKILLS: SkillGroup[] = [
@@ -332,7 +332,7 @@ export const SKILLS: SkillGroup[] = [
     ],
   },
   {
-    label: '/ MOBILE',
+    label: '/ MÓVIL',
     items: [
       { name: 'React Native', icon: siReact },
       { name: 'Flutter', icon: siFlutter },

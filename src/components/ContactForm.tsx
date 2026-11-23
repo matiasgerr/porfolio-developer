@@ -1,15 +1,17 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { Send } from 'lucide-react';
 import { CONTACT_EMAIL } from '../constants';
+import { useLang } from '../i18n/context';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
 const EMPTY_FORM = { name: '', email: '', message: '' };
 
 const FIELD_CLASS =
-  'w-full bg-transparent border-b border-slate-700 px-0 py-4 text-2xl md:text-3xl text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-400 transition-colors';
+  'glass-inset w-full rounded-2xl px-5 py-4 text-xl md:text-2xl text-ink placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-700/40 transition-shadow';
 
 const ContactForm = () => {
+  const { t } = useLang();
   const [formData, setFormData] = useState(EMPTY_FORM);
   const [formStatus, setFormStatus] = useState<FormStatus>('idle');
 
@@ -38,10 +40,10 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-12 justify-center">
+    <form onSubmit={handleSubmit} className="glass rounded-[2rem] p-6 md:p-10 flex flex-col gap-6 justify-center">
       {[
-        { type: 'text', name: 'name', placeholder: 'Nombre completo', autoComplete: 'name' },
-        { type: 'email', name: 'email', placeholder: 'Correo electrónico', autoComplete: 'email' },
+        { type: 'text', name: 'name', placeholder: t('Nombre completo', 'Full name'), autoComplete: 'name' },
+        { type: 'email', name: 'email', placeholder: t('Correo electrónico', 'Email address'), autoComplete: 'email' },
       ].map((field) => (
         <div key={field.name}>
           <label htmlFor={`contact-${field.name}`} className="sr-only">
@@ -63,7 +65,7 @@ const ContactForm = () => {
 
       <div>
         <label htmlFor="contact-message" className="sr-only">
-          Mensaje
+          {t('Mensaje', 'Message')}
         </label>
         <textarea
           id="contact-message"
@@ -71,8 +73,8 @@ const ContactForm = () => {
           required
           value={formData.message}
           onChange={handleInputChange}
-          placeholder="Háblame de tu idea..."
-          className={`${FIELD_CLASS} resize-none`}
+          placeholder={t('Háblame de tu idea...', 'Tell me about your idea...')}
+          className={`${FIELD_CLASS} min-h-32 resize-none`}
         />
       </div>
 
@@ -80,9 +82,9 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={formStatus === 'sending'}
-          className="group flex items-center gap-4 text-2xl font-bold text-slate-300 hover:text-teal-400 transition-colors disabled:opacity-50"
+          className="btn-dark group flex items-center gap-4 rounded-full px-7 py-4 text-lg font-bold disabled:opacity-50"
         >
-          {formStatus === 'sending' ? 'PROCESANDO...' : 'ENVIAR MENSAJE'}
+          {formStatus === 'sending' ? t('ENVIANDO...', 'SENDING...') : t('ENVIAR MENSAJE', 'SEND MESSAGE')}
           {formStatus !== 'sending' && (
             <Send
               aria-hidden="true"
@@ -93,14 +95,14 @@ const ContactForm = () => {
 
         <div role="status" aria-live="polite">
           {formStatus === 'success' && (
-            <p className="mt-6 font-mono text-teal-400 text-sm">
-              {'>'} Sistema: Mensaje recibido con éxito.
+            <p className="mt-6 font-mono text-ink text-sm">
+              {'>'} {t('Mensaje Enviado con éxito.', 'Message sended successfully.')}
             </p>
           )}
           {formStatus === 'error' && (
-            <p className="mt-6 font-mono text-red-400 text-sm">
-              {'>'} Error: no se pudo enviar el mensaje. Intenta de nuevo o escríbeme a{' '}
-              <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-red-300">
+            <p className="mt-6 font-mono text-red-600 text-sm">
+              {'>'} {t('Error: no se pudo enviar el mensaje. Intenta de nuevo o escríbeme a', 'Error: the message could not be sent. Try again or email me at')}{' '}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-red-800">
                 {CONTACT_EMAIL}
               </a>
               .
